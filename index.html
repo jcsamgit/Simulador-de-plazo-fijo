@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <header>
+        <h1>
+            Simulador de plazo fijo
+        </h1>
+        <h3>A continuacion podras usar este simulador de plazo fijo para que puedas calcular el rendimiento de tu capital</h3>
+    </header>
+    <main>
+        <form action="">
+            <div class="contenido">
+
+                <div class="capital">
+                    <label for="Capital">Capital a invertir</label>
+                    <input type="number" id="inputCapital">
+                    <span>(Minimo $1000)</span>
+                </div>
+                
+                <div class="plazo">
+                    <label for="plazo">Plazo (en dias)*</label>
+                    <input type="number" name="" id="inputPlazo">
+                    <span>(Minimo 30 dias - Maximo 365 dias)</span>
+                </div>
+                
+                <div class="boton">
+                    <button onclick="calcular()">
+                        Calcular
+                    </button>
+                </div>
+                
+                
+                <p>
+                    *La tasa de interes para todos los plazos es del 27% anual
+                </p>
+          </div>
+
+
+            <div class="resultado">
+                <table>
+                    <tr>
+                        <td>
+                            Capital
+                        </td>
+                        <td>
+                            $
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Plazo
+                        </td>
+                        <td>
+                            ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Intereses ganados
+                        </td>
+                        <td>
+                            $
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Monto total
+                        </td>
+                        <td>
+                            $
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            TNA
+                        </td>
+                        <td>
+                            27%
+                        </td>
+                    </tr>
+                </table>
+                <button class="regresar">Regresar</button>
+            </div>
+
+        </form>
+    </main>
+    <script src="plazoFijo.js"></script>
+</body>
+</html>
