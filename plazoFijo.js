@@ -85,7 +85,7 @@ function calcular(){
     var plazoDom= parseInt(document.getElementById("inputPlazo").value);
     interesDom= (capitalDom*0.27/365)* plazoDom
     montoFinalDom= capitalDom+ interesDom
-    alert("Intereses ganados: $" + interesDom+ "\nMonto final: $" + montoFinalDom)
+    alert("Intereses ganados: $" + interesDom.toFixed(2)+ "\nMonto final: $" + montoFinalDom.toFixed(2))
     // IMPORTANTE: AGREGUE EL ALERT PORQUE DESPUES DE HACER CLICK EN EL BOTON CALCULAR LA PAGINA SE ACTUALIZA Y SE REINICIA LA CONSOLA, POR ESO AGREGUE EL ALERT PARA QUE POR LO MENOS SE PUEDA VISUALIZAR LOS DATOS
     console.log("Intereses ganados: $" + interesDom+ "\nMonto final: $" + (capitalDom+interesDom))
    
