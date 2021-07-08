@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador de plazo fijo</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -17,25 +17,26 @@
         <h3>A continuacion podras usar este simulador de plazo fijo para que puedas calcular el rendimiento de tu capital</h3>
     </header>
     <main>
-        <form action="">
-            <div class="contenido">
+        <form id="formularioPrincipal" action="">
+            <div class="contenido" id="form">
 
                 <div class="capital">
-                    <label for="Capital">Capital a invertir</label>
-                    <input type="number" id="inputCapital">
-                    <span>(Minimo $1000)</span>
+                    <label for="inputCapital">Capital a invertir</label>
+                    <input required type="number" id="inputCapital">
+                    <span class="errorCapital">(Minimo $1000)</span>
                 </div>
                 
                 <div class="plazo">
-                    <label for="plazo">Plazo (en dias)*</label>
-                    <input type="number" name="" id="inputPlazo">
-                    <span>(Minimo 30 dias - Maximo 365 dias)</span>
+                    <label for="inputPlazo">Plazo  (en  dias)*</label>
+                    <input required type="number" name="" id="inputPlazo">
+                    <span id="bajarTexto" class="errorPlazo">(Minimo 30 dias - <br> Maximo 365 dias)</span>
+
                 </div>
                 
                 <div class="boton">
-                    <button onclick="calcular()">
-                        Calcular
-                    </button>
+
+                    <input id="calcular"  value="Calcular" type="submit" class="btn">
+                    <input type="reset" value="Limpiar" class="btn">
                 </div>
                 
                 
@@ -45,54 +46,12 @@
           </div>
 
 
-            <div class="resultado">
-                <table>
-                    <tr>
-                        <td>
-                            Capital
-                        </td>
-                        <td>
-                            $
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Plazo
-                        </td>
-                        <td>
-                            ...
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Intereses ganados
-                        </td>
-                        <td>
-                            $
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Monto total
-                        </td>
-                        <td>
-                            $
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            TNA
-                        </td>
-                        <td>
-                            27%
-                        </td>
-                    </tr>
-                </table>
-                <button class="regresar">Regresar</button>
-            </div>
+ 
 
         </form>
-    </main>
+    </main> 
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="plazoFijo.js"></script>
 </body>
 </html>

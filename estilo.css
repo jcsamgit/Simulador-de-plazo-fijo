@@ -16,6 +16,7 @@ h3{
     margin-left: 5px;
     margin:2% 2%;
     font-size: 1.5rem;
+    text-align: center;
     
 }
 div{
@@ -30,6 +31,12 @@ label{
 }
 span{
     background-color: rgb(149, 161, 162);
+    font-size: .9rem;
+    display: inline-block;
+}
+#bajarTexto{
+    position: relative;
+    top: 7px;
 }
 main{
     display: flex;
@@ -44,10 +51,13 @@ form{
     background-color: grey;
     width: 50%;
     height: 350px;
+    display: flex;
+    justify-content: center;
 }
+/* contenedor donde esta todo el contenido del formulario principal */
 .contenido{
     background-color: grey;
-    /* width: 50%; */
+
 
 }
 
@@ -55,21 +65,26 @@ input{
     height: 40%;
     position: relative;
     left: auto;
+    font-size: 1rem;
 }
-button{
+.btn{
     font-size: 1.5rem;
     background-color: silver;
-    margin-left: 40%;
+    margin: 5px;
+    display: inline-block;
+    padding: 3px;
 }
 button:hover{
     background-color: lightyellow;
 }
+
+/* contenedor que contiene el boton calcular y limpiar */
 .boton{
     margin-right: 0%;
+    display: flex;
+    justify-content: center;
 }
-.resultado{
-    /* display: none; */
-}
+
 .contenido{
     display: none;
 }
@@ -98,14 +113,15 @@ button:hover{
     margin-left: 0;
     margin-top: 20px;
 }
-.resultado{
-    display:none;
-}
+
 .contenido{
     display: block;
 }
 
-
+/* tabla de resultados creados en el DOM */
+#tabla{
+    opacity: 0.9;
+}
 
 
 

@@ -1,132 +1,167 @@
-// var interes
-// var capitalFinal
-
-// var capital
-// var plazo
-// const historialInversiones=[]
 
 
-// class PlazoFijo{
+var historialInversiones=[]
+var tasa= 27
 
-//     constructor(capital_inicial, duracion){
-//         this.capital_inicial= capital_inicial;
-//         this.duracion=duracion;
-        
-//     }
-//     //mostrar por alert y console los importes correspondientes
-//     mostrarInteres(){
-//         //la tasa de interes es fija (del 27% anual)
-//         interes= (this.capital_inicial*0.27/365)*this.duracion
-//         console.log("Intereses generados: "+ interes.toFixed(2))
-//         // alert("Intereses generados: "+ interes.toFixed(2))
-        
-//     }
-    
-//     mostrarCapitalFinal(){
-//         capitalFinal= this.capital_inicial + interes
-//         console.log("Monto final a cobrar: "+ capitalFinal.toFixed(2))
-//         // alert("Monto final a cobrar: "+ capitalFinal.toFixed(2))
-//         // return interes
+$(document).ready(function(){
+    // doy funcion al boton calcular
+    $("#calcular").click(function(){
+        var capital= parseInt( $("#inputCapital").val() )
+        var plazo= parseInt($("#inputPlazo").val() )    
 
-//     }
-// }
-// function nuevaInversion(){
-//     // capital= parseInt(prompt("Por favor ingrese el monto a invertir: "))
+        // establezco las restricciones de los input
 
-//     // while (capital<1000){
-//     //     alert("El monto minimo es de $1000");
-//     //     capital= parseInt(prompt("Por favor ingrese el monto a invertir: "))
+        if (isNaN(capital)===true|| capital<1000){
+            // marco error en el input capital pintando el borde de rojo entre otras cosas
+            $('#inputCapital').css({border: "1px solid red"})
+            $('.errorCapital').css({border: "1px solid red", background:"white", color: "red"})
+            return false
+        }
+        else{
+            // quito las marcas del input capital cuando se hace click y los valores son correctos
+            $('#inputCapital').css({border: "none"})
+            $('.errorCapital').css({border: "none", background:"rgb(149, 161, 162)", color: "black"})
+            
+            // restricciones para el plazo
+            if(isNaN(plazo)||(plazo<30) || (plazo>365)){
+                // marco error en el input plazo
+                $('#inputPlazo').css({border: "1px solid red"})         
+                $('.errorPlazo').css({border: "1px solid red", background:"white", color: "red"})
+                return false
+            }
+            else{
 
-//     // }
-//     // // plazo= parseInt(prompt("Por favor ingrese un plazo entre 30 y 365 dias"))
-
-//     // while ((plazo<30) || (plazo>365)){
-//     //     alert("ingrese un plazo valido!");
-//     //     plazo= parseInt(prompt("Por favor ingrese un plazo entre 30 y 365 dias"))
-
-//     // }
-    
-//     function granInversion(capital) {
-//         const capitalMillonario=[]
-//         const Inversiones = {capital};
-//         if (capital > 999999){
-//             capitalMillonario.push(Inversiones.capital);
-//             console.log("capital abundante => "+ capitalMillonario+ " <= no lo dejen ir!");
-    
-//         }
-        
-//     }
-
-//     function agregarHistorial(capital,plazo,tasa,interes){
-//         const items={capital,plazo, tasa, interes};
-//         historialInversiones.push(items);
-//         console.log(historialInversiones)
-//     }
-//     granInversion(capital);
-//     const inversion1= new PlazoFijo(capital,plazo);
-    
-    
-//     inversion1.mostrarInteres();
-//     inversion1.mostrarCapitalFinal();
-//     const tasa= "27%"
-//     agregarHistorial(capital,plazo,tasa,interes.toFixed(2))  
-    
-
-// }
-// nuevaInversion();
-
-
-  
-//DOM
-
-
-function calcular(){
-    var capitalDom= parseInt(document.getElementById("inputCapital").value);
-    var plazoDom= parseInt(document.getElementById("inputPlazo").value);
-    interesDom= (capitalDom*0.27/365)* plazoDom
-    montoFinalDom= capitalDom+ interesDom
-    alert("Intereses ganados: $" + interesDom.toFixed(2)+ "\nMonto final: $" + montoFinalDom.toFixed(2))
-    // IMPORTANTE: AGREGUE EL ALERT PORQUE DESPUES DE HACER CLICK EN EL BOTON CALCULAR LA PAGINA SE ACTUALIZA Y SE REINICIA LA CONSOLA, POR ESO AGREGUE EL ALERT PARA QUE POR LO MENOS SE PUEDA VISUALIZAR LOS DATOS
-    console.log("Intereses ganados: $" + interesDom+ "\nMonto final: $" + (capitalDom+interesDom))
-   
-   
-    
+                // si el plazo es correcto al hacer click en el boton se elimina los cambios que marcan el error
+                $('#inputPlazo').css({border: "none"})         
+                $('.errorPlazo').css({border: "none", background:"rgb(149, 161, 162)", color: "black"})
 
 
 
+                // Finalmente si los valores de todos los campos son correctos se ejecuta el resto del codigo
 
+                // se debe prevenir que se reinicie la pagina al presionar el boton
+                var formularioPrincipal=document.getElementById("formularioPrincipal");
+                formularioPrincipal.addEventListener("submit", validarFormulario);
+                function validarFormulario(e){
+                    e.preventDefault();
+                }
 
-    // esto quizas sirva para mas adelante
-    // function boton(){
-    //     var contenedor= document.getElementsByClassName("contenido");
-    //     var resultado= document.getElementsByClassName("resultado");
-    //     contenedor.style.display="none";
-    //     resultado.style.display="block";
-    // }
-    // boton()
-}
+                //calculos necesarios para el simulador (interes y monto final)
+                var interes= parseFloat(((capital*(tasa/100)/365)* plazo).toFixed(2))
+                var montoFinal= capital+ interes
 
-
-
-
-
-
+                console.log("Intereses ganados: $" + interes+ "\nMonto final: $" + (capital+interes))
 
 
 
+                //incorporo la tabla con los resultados
+                $("#formularioPrincipal").append( `
+                
+                    <div class="resultado" id="tabla" style="display:none;">
+                        <table>
+                            <tr>
+                                <td> Capital </td>
+                                <td>
+                                    $${capital}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Plazo
+                                </td>
+                                <td>
+                                    ${plazo}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Intereses ganados
+                                </td>
+                                <td>
+                                    $${interes}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Monto total
+                                </td>
+                                <td>
+                                    $${montoFinal}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    TNA
+                                </td>
+                                <td>
+                                    ${tasa}%
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="regresar">Regresar</button>
+                    </div>
+                `)
 
+                // hago desaparecer el formulario y traigo la tabla con los resultados
+                $('.contenido').fadeOut("slow", function(){
+                    $('.resultado').fadeIn(2000)
+                    // un pequeña animacion de billetes
+                    $('#formularioPrincipal').css({backgroundImage:"url(https://miro.medium.com/max/888/1*YGCqKYYjb1wJgeqXx-2mjA.gif)"}).fadeIn(1000)
+                })
+                
 
+                // doy funcion al boton regresar en la tabla de resultados
+                $('.regresar').on("click", function(){
+                
+                    $('.resultado').fadeOut("slow",function(){
+                        $('.resultado').remove() //elimino la tabla con los resultados
+                        $('.contenido').fadeIn(2000) //vuelvo a traer el formulario anterior
+                        $('#formularioPrincipal').css({backgroundImage:"none"}).delay(1000) //quito el fondo animado
+                    })
 
+                })
 
+                // Si el usuario no quiere hacer click en el boton regresar se puede presionar "ENTER"
+                $("body").keypress(function(event){
+                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                    if(keycode == '13'){
+                        $(".regresar").trigger('click')   
+                    }
+                });
 
+                // session storage
+       
+                function agregarHistorial(capital,plazo,tasa,interes,montoFinal){
+                    const datos= {capital, plazo, tasa, interes, montoFinal}
+                    historialInversiones.push(datos);
+                }    
+                agregarHistorial(capital,plazo,tasa,interes,montoFinal)
+                
+                
+                const historialInversionesJson= JSON.stringify(historialInversiones)
+                sessionStorage.setItem('Calculos de inversiones', historialInversionesJson)       
 
+                // API
+                // (no encontre una API que me pudiera brindar las tasas anuales que usan la mayoria de los bancos en los plazos fijos, de todas cada banco tasas distintas)
 
-
-
-
-
-
-
-
-
-
+                // esta API es gratuita y no aporta una funcion importante en el simulador
+                function enviarDatosApi() {
+                    let Inversiones = {
+                        "userId": 1,
+                        "id": 101,
+                        "title": "Inversiones",
+                        "body": historialInversiones
+                    }
+                
+                    $.post("https://jsonplaceholder.typicode.com/posts", Inversiones).done(function(respuesta, estado) {
+                        console.log("Estado: " + estado);
+                        console.log("Datos de la API: " + JSON.stringify(respuesta));
+                        console.log(respuesta);
+                    });
+                }
+                
+                enviarDatosApi();
+            }
+        }
+    })
+})
