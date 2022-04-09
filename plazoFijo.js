@@ -106,7 +106,7 @@ $(document).ready(function(){
                 $('.contenido').fadeOut("slow", function(){
                     $('.resultado').fadeIn(2000)
                     // un pequeña animacion de billetes
-                    $('#formularioPrincipal').css({backgroundImage:"url(https://miro.medium.com/max/888/1*YGCqKYYjb1wJgeqXx-2mjA.gif)"}).fadeIn(1000)
+                    // $('#formularioPrincipal').css({backgroundImage:"url(https://miro.medium.com/max/888/1*YGCqKYYjb1wJgeqXx-2mjA.gif)"}).fadeIn(1000)
                 })
                 
 

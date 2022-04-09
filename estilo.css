@@ -20,7 +20,7 @@ h3{
     
 }
 div{
-    margin: 1%;
+    margin: 5px;
     font-size: 20px;
     height: 80px;
     
@@ -33,6 +33,10 @@ span{
     background-color: rgb(149, 161, 162);
     font-size: .9rem;
     display: inline-block;
+}
+.plazoSpan{
+    font-size: 20px;
+    background-color: transparent;
 }
 #bajarTexto{
     position: relative;
@@ -50,6 +54,7 @@ main{
 form{
     background-color: grey;
     width: 50%;
+    min-width: 480px;
     height: 350px;
     display: flex;
     justify-content: center;
@@ -124,8 +129,72 @@ button:hover{
 }
 
 
+@media only screen and (max-width: 500px){
 
+    h1{
+        font-size: 210%;
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    form{
+        margin-top: 15px;
+        width: 80vw;
+        min-width: 200px;
+    }
+    .capital {
+        margin: 10px;
+    }
+    .plazo{
+        margin: 10px;
+    }
+    .boton input{
+        font-size: 1.1rem;
+    }
+    .contenido{
+        text-align: center;
+    }
+    .contenido input{
+        text-align: center;
+        width: 80%;
+        max-width: 200px;
+        margin-top: 5px;
+    }
+    p{
+        padding: 5px;
+    }
+    .capitalMin{
+        width: 105px;
+    }
+    .plazoSpan{
+        width: 108.41px;
+    }
+    label{
+        font-size: 16px;
+    }
+    .boton{
+        margin-top: 20px;
+    }
+    p{
+        font-size: 16px;
+        margin-top: -20px;
+    }
 
+}
 
+@media only screen and (min-width: 930px){
+    div{
+    margin: 1%;
+    font-size: 20px;
+    height: 80px;
+    
+}
+/* @media only screen and (min-width: 500px){
+    main{
+        background-color: green;
+    }
+    
+} */
+}
 
 

@@ -17,17 +17,18 @@
         <h3>A continuacion podras usar este simulador de plazo fijo para que puedas calcular el rendimiento de tu capital</h3>
     </header>
     <main>
-        <form id="formularioPrincipal" action="">
+        <form id="formularioPrincipal" action="" style="height: 60vh;">
             <div class="contenido" id="form">
 
                 <div class="capital">
                     <label for="inputCapital">Capital a invertir</label>
                     <input required type="number" id="inputCapital">
-                    <span class="errorCapital">(Minimo $1000)</span>
+                    <span class="capitalMin">(Minimo $1000)</span>
                 </div>
                 
                 <div class="plazo">
-                    <label for="inputPlazo">Plazo  (en  dias)*</label>
+                    <span class="plazoSpan">
+                    <label  for="inputPlazo">Plazo (en dias)*</label></span>
                     <input required type="number" name="" id="inputPlazo">
                     <span id="bajarTexto" class="errorPlazo">(Minimo 30 dias - <br> Maximo 365 dias)</span>
 
