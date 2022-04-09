@@ -11,6 +11,7 @@
 <body>
     
     <header>
+
         <h1>
             Simulador de plazo fijo
         </h1>
@@ -30,7 +31,7 @@
                     <span class="plazoSpan">
                     <label  for="inputPlazo">Plazo (en dias)*</label></span>
                     <input required type="number" name="" id="inputPlazo">
-                    <span id="bajarTexto" class="errorPlazo">(Minimo 30 dias - <br> Maximo 365 dias)</span>
+                    <span id="bajarTexto" class="rangoPlazo">(Minimo 30 dias - <br> Maximo 365 dias)</span>
 
                 </div>
                 
@@ -51,8 +52,32 @@
 
         </form>
     </main> 
+    <!-- boton de modo dia-noche -->
+    <button id="tema" onclick="cambiarTexto()">modo noche</button>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="plazoFijo.js"></script>
+
+    <!-- modo dia/noche -->
+    <!-- <script type="text/javascript"> -->
+    <script type="text/javascript">
+        const temaOscuro= document.querySelector("#tema")
+        const body= document.querySelector("body")
+        // var cambio= document.getElementById("tema")
+
+        temaOscuro.addEventListener("click", e=>{
+            body.classList.toggle("modoNoche")
+        })
+        // cambiar texto del boton
+        function cambiarTexto(){
+            if(temaOscuro.innerHTML=="modo noche"){
+                temaOscuro.innerHTML="modo dia"
+            }else{
+                temaOscuro.innerHTML="modo noche"
+            }
+        }
+        
+    </script>
 </body>
 </html>

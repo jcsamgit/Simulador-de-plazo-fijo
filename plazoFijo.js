@@ -4,6 +4,23 @@ var historialInversiones=[]
 var tasa= 27
 
 $(document).ready(function(){
+    // $("#tema").click(function(){
+    //     var noche= false
+    //     if(noche===false){
+    //         $("body").css({backgroundColor:"black"})
+    //         $("h1").css({color:"white"})
+    //         $("h3").css({color:"white"})
+    //         $("form").css({backgroundColor:"grey"})
+    //         $("#tema").text("modo dia")
+    //         $("#tema").css({color:"black", backgroundColor:"white"})
+    //         noche= !noche
+    //     }
+    //     if(noche===true){
+    //         $("body").css({backgroundColor:"white"})
+    //         $("#tema").text("modo noche")
+
+    //     }
+    // })
     // doy funcion al boton calcular
     $("#calcular").click(function(){
         var capital= parseInt( $("#inputCapital").val() )
