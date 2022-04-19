@@ -21,30 +21,37 @@
         <form id="formularioPrincipal" action="" style="height: 60vh;">
             <div class="contenido" id="form">
 
-                <div class="capital">
-                    <label for="inputCapital">Capital a invertir</label>
+                <div class="capital subContenido">
+                    <label for="inputCapital">Capital a invertir</label><br>
                     <input required type="number" id="inputCapital">
                     <span class="capitalMin">(Minimo $1000)</span>
                 </div>
                 
-                <div class="plazo">
+                <div class="plazo subContenido">
                     <span class="plazoSpan">
-                    <label  for="inputPlazo">Plazo (en dias)*</label></span>
+                    <label  for="inputPlazo">Plazo (en dias)</label></span><br>
                     <input required type="number" name="" id="inputPlazo">
-                    <span id="bajarTexto" class="rangoPlazo">(Minimo 30 dias - <br> Maximo 365 dias)</span>
+                    <span id="bajarTexto" class="rangoPlazo">(Minimo 30 dias - Maximo 365 dias)</span>
+
+                </div>
+                <div class="tasa plazo subContenido">
+                    <!-- <span class="tasaSpan"> -->
+                    <label  for="inputTasa">Tasa anual(%)</label><br>
+                <!-- </span> -->
+                    <input required type="number" min="0" name="" id="inputTasa">
 
                 </div>
                 
-                <div class="boton">
+                <div class="boton subContenido">
 
                     <input id="calcular"  value="Calcular" type="submit" class="btn">
                     <input type="reset" value="Limpiar" class="btn">
                 </div>
                 
                 
-                <p>
+                <!-- <p>
                     *La tasa de interes para todos los plazos es del 27% anual
-                </p>
+                </p> -->
           </div>
 
 

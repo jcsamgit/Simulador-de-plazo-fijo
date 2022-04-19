@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* temas */
 #tema{
     position: fixed;
     top: 0;
@@ -12,7 +13,8 @@
     padding: 3px;
     border: none;
     text-align: center;
-    width: 80px;
+    width: 95px;
+    overflow: hidden;
 }
 #tema:hover{
     cursor: pointer;
@@ -34,6 +36,10 @@ body.modoNoche #tema{
     color: black;
     background-color: white;
 }
+/* fin de temas */
+
+
+
 header{
     padding-top: 15px;
 }
@@ -69,10 +75,10 @@ span{
     font-size: 20px;
     background-color: transparent;
 }
-#bajarTexto{
+/* #bajarTexto{
     position: relative;
     top: 7px;
-}
+} */
 main{
     display: flex;
     align-items: center;
@@ -87,16 +93,17 @@ form{
     /* background-color: grey; */
     width: 50%;
     min-width: 480px;
-    height: 350px;
+    /* height: 350px; */
     display: flex;
     justify-content: center;
 }
 
 input{
     height: 40%;
-    position: relative;
+    /* position: relative; */
     left: auto;
     font-size: 1rem;
+    
 }
 .btn{
     font-size: 1.5rem;
@@ -118,7 +125,18 @@ input{
 }
 
 .contenido{
-    display: none;
+    height: 100%;
+    width: 50%;
+    /* display: flex;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    align-content: center; */
+
+}
+.subContenido{
+    text-align: center;
 }
 .resultado{
     background-color: aliceblue;
@@ -156,6 +174,14 @@ input{
 }
 
 
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 500px){
 
     h1{
@@ -176,10 +202,12 @@ input{
         margin: 10px;
     }
     .boton input{
-        font-size: 1.1rem;
+        font-size: 20px;
     }
     .contenido{
         text-align: center;
+        width: 80%;
+        height: auto;
     }
     .contenido input{
         text-align: center;
@@ -194,7 +222,7 @@ input{
         width: 105px;
     }
     .plazoSpan{
-        width: 108.41px;
+        /* width: 108.41px; */
     }
     label{
         font-size: 16px;
@@ -202,12 +230,24 @@ input{
     .boton{
         margin-top: 20px;
     }
-    p{
-        font-size: 16px;
-        margin-top: -20px;
+    .rangoPlazo{
+        width: auto;
+        margin-top: 8px;
     }
+    .tasa{
+        margin-top: 30px;
+    }
+    
+
 
 }
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 930px){
     div{

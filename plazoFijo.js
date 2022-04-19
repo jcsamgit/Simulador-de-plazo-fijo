@@ -1,30 +1,14 @@
 
 
 var historialInversiones=[]
-var tasa= 27
+// var tasa= 27
 
 $(document).ready(function(){
-    // $("#tema").click(function(){
-    //     var noche= false
-    //     if(noche===false){
-    //         $("body").css({backgroundColor:"black"})
-    //         $("h1").css({color:"white"})
-    //         $("h3").css({color:"white"})
-    //         $("form").css({backgroundColor:"grey"})
-    //         $("#tema").text("modo dia")
-    //         $("#tema").css({color:"black", backgroundColor:"white"})
-    //         noche= !noche
-    //     }
-    //     if(noche===true){
-    //         $("body").css({backgroundColor:"white"})
-    //         $("#tema").text("modo noche")
-
-    //     }
-    // })
-    // doy funcion al boton calcular
+    // boton calcular
     $("#calcular").click(function(){
         var capital= parseInt( $("#inputCapital").val() )
         var plazo= parseInt($("#inputPlazo").val() )    
+        var tasa= parseInt($("#inputTasa").val() )    
 
         // establezco las restricciones de los input
 
@@ -43,14 +27,24 @@ $(document).ready(function(){
             if(isNaN(plazo)||(plazo<30) || (plazo>365)){
                 // marco error en el input plazo
                 $('#inputPlazo').css({border: "1px solid red"})         
-                $('.errorPlazo').css({border: "1px solid red", background:"white", color: "red"})
+                // $('.errorPlazo').css({border: "1px solid red", background:"white", color: "red"})
                 return false
             }
             else{
 
                 // si el plazo es correcto al hacer click en el boton se elimina los cambios que marcan el error
                 $('#inputPlazo').css({border: "none"})         
-                $('.errorPlazo').css({border: "none", background:"rgb(149, 161, 162)", color: "black"})
+                // $('.errorPlazo').css({border: "none", background:"rgb(149, 161, 162)", color: "black"})
+                
+                if(isNaN(tasa)){
+                    // marco error en el input plazo
+                    $('#inputTasa').css({border: "1px solid red"})         
+                    // $('.errorPlazo').css({border: "1px solid red", background:"white", color: "red"})
+                    return false
+                }
+                else{
+                    $('#inputTasa').css({border: "none"})     
+                }
 
 
 
