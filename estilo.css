@@ -75,10 +75,7 @@ span{
     font-size: 20px;
     background-color: transparent;
 }
-/* #bajarTexto{
-    position: relative;
-    top: 7px;
-} */
+
 main{
     display: flex;
     align-items: center;
