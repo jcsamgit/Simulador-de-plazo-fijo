@@ -1,7 +1,6 @@
 
 
 var historialInversiones=[]
-// var tasa= 27
 
 $(document).ready(function(){
     // boton calcular
@@ -14,8 +13,7 @@ $(document).ready(function(){
 
         if (isNaN(capital)===true|| capital<1000){
             // marco error en el input capital pintando el borde de rojo entre otras cosas
-            $('#inputCapital').css({border: "1px solid red"})
-            $('.errorCapital').css({border: "1px solid red", background:"white", color: "red"})
+            $('#inputCapital').css({border: "2px solid red"})
             return false
         }
         else{
@@ -26,20 +24,18 @@ $(document).ready(function(){
             // restricciones para el plazo
             if(isNaN(plazo)||(plazo<30) || (plazo>365)){
                 // marco error en el input plazo
-                $('#inputPlazo').css({border: "1px solid red"})         
-                // $('.errorPlazo').css({border: "1px solid red", background:"white", color: "red"})
+                $('#inputPlazo').css({border: "2px solid red"})         
                 return false
             }
             else{
 
                 // si el plazo es correcto al hacer click en el boton se elimina los cambios que marcan el error
                 $('#inputPlazo').css({border: "none"})         
-                // $('.errorPlazo').css({border: "none", background:"rgb(149, 161, 162)", color: "black"})
                 
+                // si la tasa es incorrecta...
                 if(isNaN(tasa)){
-                    // marco error en el input plazo
-                    $('#inputTasa').css({border: "1px solid red"})         
-                    // $('.errorPlazo').css({border: "1px solid red", background:"white", color: "red"})
+                    // marco error en el input tasa
+                    $('#inputTasa').css({border: "2px solid red"})         
                     return false
                 }
                 else{

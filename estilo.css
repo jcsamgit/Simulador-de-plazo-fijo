@@ -218,12 +218,6 @@ input{
     p{
         padding: 5px;
     }
-    .capitalMin{
-        width: 105px;
-    }
-    .plazoSpan{
-        /* width: 108.41px; */
-    }
     label{
         font-size: 16px;
     }
@@ -251,17 +245,12 @@ input{
 
 @media only screen and (min-width: 930px){
     div{
-    margin: 1%;
-    font-size: 20px;
-    height: 80px;
-    
-}
-/* @media only screen and (min-width: 500px){
-    main{
-        background-color: green;
+        margin: 1%;
+        font-size: 20px;
+        height: 80px;
+        
     }
-    
-} */
+
 }
 
 
