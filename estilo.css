@@ -43,7 +43,9 @@ body.modoNoche .resultado{
 /* fin de temas */
 
 
-
+body{
+    background-color: whitesmoke;
+}
 header{
     padding-top: 15px;
 }
